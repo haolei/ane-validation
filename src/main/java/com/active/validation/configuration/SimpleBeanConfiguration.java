@@ -1,6 +1,8 @@
 package com.active.validation.configuration;
 
 import java.io.InputStream;
+import java.util.Map;
+import java.util.Set;
 
 import javax.validation.BootstrapConfiguration;
 import javax.validation.Configuration;
@@ -9,9 +11,20 @@ import javax.validation.MessageInterpolator;
 import javax.validation.ParameterNameProvider;
 import javax.validation.TraversableResolver;
 import javax.validation.ValidatorFactory;
+import javax.validation.spi.ConfigurationState;
+
+import com.active.validation.SimpleBeanValidationProvider;
 
 public class SimpleBeanConfiguration implements
 		Configuration<SimpleBeanConfiguration> {
+	private ConfigurationState configurationState;
+	/**
+	 * constructor 
+	 * @param simpleBeanValidationProvider
+	 */
+	public SimpleBeanConfiguration(
+			SimpleBeanValidationProvider simpleBeanValidationProvider) {
+	}
 
 	public SimpleBeanConfiguration ignoreXmlConfiguration() {
 		// TODO Auto-generated method stub
@@ -82,4 +95,6 @@ public class SimpleBeanConfiguration implements
 		return null;
 	}
 
+	
+	
 }
