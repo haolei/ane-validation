@@ -1,49 +1,70 @@
 package com.active.validation;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import javax.validation.constraints.Size;
 
+import com.active.validation.constraints.Email;
+
+
 public class Address {
-    @NotNull @Size(max=30)
-    private String addressline1;
 
-    @Size(max=30)
-    private String addressline2;
+  @NotNull
+  @Size(max = 30)
+  private String addressline1;
 
-    private String zipCode;
+  @Size(max = 30)
+  private String addressline2;
 
-    private String city;
+  @NotNull
+  private String zipCode;
 
-    public String getAddressline1() {
-        return addressline1;
-    }
+  @Null
+  @Size(min = 10)
+  private String city;
 
-    public void setAddressline1(String addressline1) {
-        this.addressline1 = addressline1;
-    }
+  @Email
+  private String email;
 
-    public String getAddressline2() {
-        return addressline2;
-    }
+  public String getAddressline1() {
+    return addressline1;
+  }
 
-    public void setAddressline2(String addressline2) {
-        this.addressline2 = addressline2;
-    }
+  public void setAddressline1( String addressline1 ) {
+    this.addressline1 = addressline1;
+  }
 
-    public String getZipCode() {
-        return zipCode;
-    }
+  public String getAddressline2() {
+    return addressline2;
+  }
 
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
-    }
+  public void setAddressline2( String addressline2 ) {
+    this.addressline2 = addressline2;
+  }
 
-    @Size(max=30) @NotNull
-    public String getCity() {
-        return city;
-    }
+  public String getZipCode() {
+    return zipCode;
+  }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+  public void setZipCode( String zipCode ) {
+    this.zipCode = zipCode;
+  }
+
+  @Size(max = 30)
+  @NotNull
+  public String getCity() {
+    return city;
+  }
+
+  public void setCity( String city ) {
+    this.city = city;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail( String email ) {
+    this.email = email;
+  }
 }

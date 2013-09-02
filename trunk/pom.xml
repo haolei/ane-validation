@@ -2,62 +2,66 @@
 
 <project>
 
-  <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.activex</groupId>
-  <artifactId>ane-validation</artifactId>
-  <version>1.0</version>
+	<groupId>com.activex</groupId>
+	<artifactId>ane-validation</artifactId>
+	<version>1.0</version>
 
-  <name>ANE Validation</name>
-  <description>Activex ane-validation</description>
-  <url>http://www.activenetwork.com</url>
+	<name>ANE Validation</name>
+	<description>Activex ane-validation</description>
+	<url>http://www.activenetwork.com</url>
 
-  <packaging>jar</packaging>
+	<packaging>jar</packaging>
 
-  <dependencies>
-   <dependency>
-	<groupId>javax.validation</groupId>
-	<artifactId>validation-api</artifactId>
-	<version>1.1.0.Final</version>
-   </dependency>
-<dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-context</artifactId>
-	<version>3.2.1.RELEASE</version>
-</dependency>
-<dependency>
-	<groupId>org.hibernate</groupId>
-	<artifactId>hibernate-validator</artifactId>
-	<version>4.3.1.Final</version>
-</dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.4</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-<build>
+	<dependencies>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
+		<!-- 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.2.1.RELEASE</version>
+		</dependency>
+		 -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.3.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>2.5.2</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.reflections</groupId>
+			<artifactId>reflections</artifactId>
+			<version>0.9.8</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+
+	</dependencies>
+	<build>
 		<plugins>
-
-			<!--
-				plugin> <groupId>org.codehaus.sonar</groupId>
-				<artifactId>sonar-maven-plugin</artifactId> <version>2.2</version>
-				<dependencies> <dependency> <groupId>mysql</groupId>
-				<artifactId>mysql-connector-java</artifactId>
-				<version>5.1.9</version> </dependency> </dependencies> </plugin
-			
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
-					</archive>
-				</configuration>
-			</plugin>-->
-
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -90,17 +94,10 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!--<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>jboss-packaging-maven-plugin</artifactId>
-				<version>2.0-NXEP51M2</version>
-				<extensions>true</extensions>
-				<configuration>
-					<archive>
-						<manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
-					</archive>
-				</configuration>
-			</plugin>-->
+			<!--<plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>jboss-packaging-maven-plugin</artifactId> 
+				<version>2.0-NXEP51M2</version> <extensions>true</extensions> <configuration> 
+				<archive> <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile> 
+				</archive> </configuration> </plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
@@ -109,14 +106,7 @@
 				</configuration>
 				<version>2.9</version>
 			</plugin>
-			<!--
-				<plugin> <groupId>org.codehaus.mojo</groupId>
-				<artifactId>emma-maven-plugin</artifactId>
-				<version>1.0-alpha-2</version> <inherited>true</inherited>
-				<executions> <execution> <id>instrument</id> <phase>pre-site</phase>
-				<goals> <goal>instrument</goal> </goals> </execution> </executions>
-				</plugin>
-			-->
+
 		</plugins>
 	</build>
 
