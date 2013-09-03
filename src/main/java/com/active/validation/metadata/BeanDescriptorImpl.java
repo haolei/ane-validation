@@ -15,9 +15,8 @@ import javax.validation.metadata.MethodType;
 import javax.validation.metadata.PropertyDescriptor;
 import javax.validation.metadata.Scope;
 
-import org.reflections.ReflectionUtils;
-
 import com.active.validation.util.ConstraintUtil;
+import com.active.validation.util.ReflectionUtil;
 import com.google.common.base.Predicates;
 import com.google.common.collect.ImmutableSet;
 
@@ -66,7 +65,7 @@ public class BeanDescriptorImpl<T> extends ElementDescriptorImpl implements Bean
 
   private ConcurrentHashMap<String, PropertyDescriptorImpl> buildPropertyDescriptorMap( Class<T> beanClass ) {
     ConcurrentHashMap<String, PropertyDescriptorImpl> map = new ConcurrentHashMap<String, PropertyDescriptorImpl>();
-    for ( Field f : ReflectionUtils.getAllFields( beanClass, Predicates.alwaysTrue() ) ) {
+    for ( Field f : ReflectionUtil.getAllFields( beanClass, Predicates.alwaysTrue() ) ) {
       Set<ConstraintDescriptorImpl<?>> propertyConstraintDescriptors = new HashSet<ConstraintDescriptorImpl<?>>();
       for ( Annotation a : f.getAnnotations() ) {
         if ( ConstraintUtil.isConstraintAnnotation( a.annotationType() ) ) {
