@@ -8,9 +8,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.reflections.ReflectionUtils;
-
-
 public class AnnotationUtil {
 
   @SuppressWarnings("unchecked")
@@ -44,8 +41,8 @@ public class AnnotationUtil {
 
   public static Map<String, Object> getAnnotationParameters( Annotation annotation ) {
     Map<String, Object> parameters = new HashMap<String, Object>();
-    for ( Method m : ReflectionUtils.getAllMethods( annotation.annotationType(),
-        ReflectionUtils.withParametersCount( 0 ) ) ) {
+    for ( Method m : ReflectionUtil.getAllMethods( annotation.annotationType(),
+        ReflectionUtil.withParametersCount( 0 ) ) ) {
       try {
         m.setAccessible( true );
         parameters.put( m.getName(), m.invoke( annotation ) );
